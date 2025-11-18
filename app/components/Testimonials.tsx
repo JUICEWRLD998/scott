@@ -44,7 +44,7 @@ export default function Testimonials() {
             Loved by Thousands
           </h2>
           <p className="text-lg text-gray-400 max-w-2xl mx-auto leading-relaxed">
-            Join our community of satisfied SCOTT users.
+            Join our community of satisfied SCOTT users!.
           </p>
         </motion.div>
 
