@@ -5,6 +5,9 @@ import { useState } from "react";
 import { ReactTyped } from "react-typed";
 import { motion, AnimatePresence } from "framer-motion";
 import About from "./components/About";
+import Features from "./components/Features";
+import Testimonials from "./components/Testimonials";
+import Footer from "./components/Footer";
 
 export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -237,6 +240,15 @@ export default function Home() {
 
       {/* About Section */}
       <About />
+
+      {/* Features Section */}
+      <Features />
+
+      {/* Testimonials Section */}
+      <Testimonials />
+
+      {/* Footer */}
+      <Footer />
     </main>
   );
 }
