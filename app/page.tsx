@@ -4,9 +4,21 @@ import Image from "next/image";
 import { useState } from "react";
 import { ReactTyped } from "react-typed";
 import { motion, AnimatePresence } from "framer-motion";
+import About from "./components/About";
 
 export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
+    e.preventDefault();
+    setIsMenuOpen(false);
+    setTimeout(() => {
+      const element = document.getElementById(targetId);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    }, 300);
+  };
 
   return (
     <main className="min-h-screen bg-zinc-950">
@@ -25,22 +37,38 @@ export default function Home() {
             {/* Desktop Nav Links */}
             <ul className="hidden md:flex items-center gap-11">
               <li>
-                <a href="#home" className="text-gray-400 hover:text-white transition-colors">
+                <a 
+                  href="#home" 
+                  onClick={(e) => handleNavClick(e, "home")}
+                  className="text-gray-400 hover:text-white transition-colors cursor-pointer"
+                >
                   Home
                 </a>
               </li>
               <li>
-                <a href="#about" className="text-gray-400 hover:text-white transition-colors">
+                <a 
+                  href="#about" 
+                  onClick={(e) => handleNavClick(e, "about")}
+                  className="text-gray-400 hover:text-white transition-colors cursor-pointer"
+                >
                   About
                 </a>
               </li>
               <li>
-                <a href="#features" className="text-gray-400 hover:text-white transition-colors">
+                <a 
+                  href="#features" 
+                  onClick={(e) => handleNavClick(e, "features")}
+                  className="text-gray-400 hover:text-white transition-colors cursor-pointer"
+                >
                   Features
                 </a>
               </li>
               <li>
-                <a href="#testimonials" className="text-gray-400 hover:text-white transition-colors">
+                <a 
+                  href="#testimonials" 
+                  onClick={(e) => handleNavClick(e, "testimonials")}
+                  className="text-gray-400 hover:text-white transition-colors cursor-pointer"
+                >
                   Testimonials
                 </a>
               </li>
@@ -95,8 +123,8 @@ export default function Home() {
                   <li>
                     <a
                       href="#home"
-                      className="block text-gray-400 hover:text-white transition-colors py-2"
-                      onClick={() => setIsMenuOpen(false)}
+                      onClick={(e) => handleNavClick(e, "home")}
+                      className="block text-gray-400 hover:text-white transition-colors py-2 cursor-pointer"
                     >
                       Home
                     </a>
@@ -104,8 +132,8 @@ export default function Home() {
                   <li>
                     <a
                       href="#about"
-                      className="block text-gray-400 hover:text-white transition-colors py-2"
-                      onClick={() => setIsMenuOpen(false)}
+                      onClick={(e) => handleNavClick(e, "about")}
+                      className="block text-gray-400 hover:text-white transition-colors py-2 cursor-pointer"
                     >
                       About
                     </a>
@@ -113,8 +141,8 @@ export default function Home() {
                   <li>
                     <a
                       href="#features"
-                      className="block text-gray-400 hover:text-white transition-colors py-2"
-                      onClick={() => setIsMenuOpen(false)}
+                      onClick={(e) => handleNavClick(e, "features")}
+                      className="block text-gray-400 hover:text-white transition-colors py-2 cursor-pointer"
                     >
                       Features
                     </a>
@@ -122,8 +150,8 @@ export default function Home() {
                   <li>
                     <a
                       href="#testimonials"
-                      className="block text-gray-400 hover:text-white transition-colors py-2"
-                      onClick={() => setIsMenuOpen(false)}
+                      onClick={(e) => handleNavClick(e, "testimonials")}
+                      className="block text-gray-400 hover:text-white transition-colors py-2 cursor-pointer"
                     >
                       Testimonials
                     </a>
@@ -206,6 +234,9 @@ export default function Home() {
           </motion.div>
         </div>
       </section>
+
+      {/* About Section */}
+      <About />
     </main>
   );
 }
