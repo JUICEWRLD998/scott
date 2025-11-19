@@ -79,7 +79,7 @@ export default function Footer() {
             {["Twitter", "Instagram", "Facebook"].map((social) => (
               <Link
                 key={social}
-                href="#"
+                href="https://x.com/Mustaph26704946"
                 className="text-sm text-gray-400 hover:text-white transition-colors"
               >
                 {social}
