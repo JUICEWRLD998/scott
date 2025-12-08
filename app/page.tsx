@@ -185,7 +185,7 @@ export default function Home() {
               src="/home.jpg"
               alt="Scott Headphones"
               width={600}
-              height={500}
+              height={400}
               className="object-contain w-full max-w-md md:max-w-full"
               priority
             />
