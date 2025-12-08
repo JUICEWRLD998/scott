@@ -3,7 +3,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "SCOTT Headphones",
-  description: "Premium headphones ",
+  description: "Premium headphones by SCOTT",
 };
 
 export default function RootLayout({
