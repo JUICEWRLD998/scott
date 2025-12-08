@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { Headphones, Battery, Bluetooth } from "lucide-react";
 
 export default function About() {
   return (
@@ -26,17 +27,17 @@ export default function About() {
             {
               title: 'Premium Sound',
               description: 'Precision-tuned 12mm drivers deliver immersive, crystal-clear audio with deep bass.',
-              icon: '🎧',
+              icon: Headphones,
             },
             {
               title: 'All-Day Battery',
               description: '8 hours of listening on a single charge.',
-              icon: '🔋',
+              icon: Battery,
             },
             {
               title: 'Seamless Connection',
               description: 'Advanced Bluetooth 5.3 technology ensures stable, low-latency connectivity with all devices.',
-              icon: '🛜',
+              icon: Bluetooth,
             },
           ].map((item, idx) => (
             <motion.div
@@ -47,7 +48,7 @@ export default function About() {
               viewport={{ once: true }}
               className="p-8 rounded-lg bg-zinc-900 border border-zinc-800 hover:border-blue-700 transition-colors"
             >
-              <div className="text-4xl mb-4">{item.icon}</div>
+              <item.icon className="w-10 h-10 text-blue-500 mb-4" />
               <h3 className="text-xl font-bold text-white mb-3">{item.title}</h3>
               <p className="text-gray-400 leading-relaxed">{item.description}</p>
             </motion.div>
